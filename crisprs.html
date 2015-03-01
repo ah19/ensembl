@@ -1,0 +1,74 @@
+---
+layout: page
+title: CRISPRs
+permalink: /crisprs/
+---
+
+<style type="text/css">
+.spin {
+  -webkit-animation: spin .8s infinite linear;
+  -moz-animation: spin .8s infinite linear;
+  -o-animation: spin .8s infinite linear;
+  animation: spin .8s infinite linear;
+     -webkit-transform-origin: 50% 58%;
+         transform-origin:50% 58%;
+         -ms-transform-origin:50% 58%; /* IE 9 */
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
+<div id="main"></div>
+<div id="content"></div>
+
+<script type="text/template" id="search_view">
+  <div class="input-group">
+    <input type="text" id="gene" class="form-control" placeholder="Marker Symbol">
+    <span class="input-group-btn">
+      <button class="btn btn-default" id="search" type="button">Search</button>
+    </span>
+  </div>
+  <div class="input-group">
+    <input type="text" id="seq" class="form-control" placeholder="Sequence to find">
+    <span class="input-group-btn">
+      <button class="btn btn-default" id="seq_search" type="button">Search</button>
+    </span>
+  </div>
+</script>
+
+<script type="text/template" id="gene_view">
+
+  <table class="table">
+    <% _.each(attributes, function (val, key) { %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= val %></td>
+      </tr>
+    <% }); %>
+  </table>
+</script>
